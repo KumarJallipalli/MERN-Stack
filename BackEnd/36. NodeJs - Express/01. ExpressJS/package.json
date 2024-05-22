@@ -1,0 +1,15 @@
+{
+  "name": "express.js",
+  "version": "1.0.0",
+  "description": "I'm buidling a web server using ExpressJS Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Siva Jallipalli",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "type": "module"
+}
