@@ -1,0 +1,141 @@
+<!-- 
+    - Emmet is a plug-in for text editors which greatly improves HTML & CSS workflow
+    - Emmet Abbreviations are acronyms/shorthands to repetitive Code Snippets
+
+    - "!" -> is an Emmet which prints the HTML's boilerplate code
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Content written inside the body tag is actually visible to End USer  -->
+
+    <!-- 
+    ## H - tags
+        - h-tag → HTML section heading tag.
+        - Heading tags in HTML are used to "give a title or subtitle to a section" of the webpage.
+        - It consists of total 6 levels of section headings
+            - "<h1>" - "<h6>" with "<h1>" being the highest section level & "<h6>" being the lowest section.
+            - As "h1" is an important part of SEO & used to give the Main Keyword to the whole content.
+                - i.e., why Use "<h1>" tag only once in entire document & it is a good practice
+        - Some of these h-tags are lesser in size compared to p-tag [p-tag === h4-tag without bold].
+    -->
+    <h1>This is Heading 1..</h1>
+    <h2>This is Heading 2..</h2>
+    <h3>This is Heading 3..</h3>
+    <h4>This is Heading 4..</h4>
+    <h5>This is Heading 5..</h5>
+    <h6>This is Heading 6..</h6>
+
+    <h7>This is Heading 7..</h7>
+    <h8>This is Heading 8..</h8>
+    This is Just a normal text
+    written in multiple paras but treated as a single para
+    <!-- 
+    ### Why h-tags are only upto h6..?
+        - As 5 levels are mostly sufficient for heading purpose of a document but 6 levels being the standard defined by SGML.
+        - After h6, all the numbers will behave like a directly written normal text
+    
+    NOTE:
+        - We can directly write text content without any html tags too
+        - This text behaves like a <p> tag
+    -->
+
+
+    <!-- 
+    ## P-tag:
+        "<p>" paragraph tag is used to "display text content as paragraphs" on a web page.
+                * <p> tag have same text size as "<h4> tag [without bold]"
+                * <p> tags can also be used for line breaks.
+    -->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, veritatis!</p>
+
+
+    <!-- 
+    NOTE:
+    ———-
+        - HTML ignore all the extra spaces & lines. 
+        - HTML only knows the tags & entities
+        - i.e., why we need to specify those extra required spaces & lines in terms of tags & entities only.
+    -->
+
+
+    <!-- 
+    ## There are 2 ways of writing code in HTML
+
+        - "Syntax"      → All about rules of writing code [Must follow]
+        - "Semantics"   → All about proper way of writing code [Must follow for SEO purpose only]
+    -->
+    
+
+    <!-- /
+    ## Types of HTML Tags
+
+        - Container tags:
+                → An element which has both opening & closing tag AND can have some content within it
+                - Hence called Container tags
+        - Empty tags: 
+                → An element which has NO closing tag, so it cannot have content within it 
+                - Hence called as Empty tags. 
+    -->
+
+
+    <!-- Some more tags -->
+    <br>       <!-- <br /> -> used to give line breaks in a webpage -->
+    <hr />      <!-- <hr /> -> used to "prints horizantal rule/ divider" in a webpage -->
+    This "b" tag <b>Bolds</b> the text       <!-- <b> -> used to bold format the text in a webpage -->
+    This "i" tag <i>Italicise</i> the text       <!-- <b> -> used to Italicise format the text in a webpage -->
+    This "u" tag <u>Underline</u> the text       <!-- <b> -> used to Underline format the text in a webpage -->
+
+    
+    <!-- PRACTICE QUESTIONS -->
+    
+    <!-- Q1: Recreate the text from given pic using HTML tags -->
+    <h2>AVENGERS</h2>
+    <h3>Ironman</h3>
+    <p>Also goes by the name <b>Tony Startk</b></p>
+    <h3>Captain America</h3>
+    <p>Also goes by the name <b>Steeve Rogers</b></p>
+    <h3>Hulk</h3>
+    <p>Also goes by the name <b>Bruce Banner</b></p>
+
+    <!-- Q2: What happens when we close an “empty tag”..? -->
+    <!-- 
+        NOTE:
+        ----
+        - we can define empty tags in 2 ways
+                1. <br>
+                2. <br />
+        
+        closing an empty tag means => <br> </br>
+
+        Ans:
+        ----
+        - WKT, Empty tags can only be defined as `<br>` (or) `<br />`
+        - So, if we write => <br> </br>
+        - it will only consider 1st tag & omit 2nd tag => only get executed once for sure
+        - But in some cases, it is executed twice
+                - <br> </br> -> executed TWICE
+                - <hr> </hr> -> exuted ONCE
+    -->
+    <hr> <br> </br> <hr />
+
+
+    <!-- 
+    ## Points to remember
+
+        1. Even if we don’t write html, body & head tags and directly write h1 or p tag with some content, 
+            it will display the data on browser. Since browser itself creates those tags internally.
+        2. If we write diff paragraphs or give more than 1 or 2 spaces inside p tag, 
+            it won’t consider those & always displays as a single paragraph by ignoring all those extra spaces & lines.
+                1. We need to use diff p tags to display diff paragraphs or use a special tag called `<br>`
+        3. Google searches the google queries based on the `<title>` tag inside the `<head>` tag. 
+            i.e., why title tag is V.Imp for SEO purpose
+    -->
+</body>
+</html>
