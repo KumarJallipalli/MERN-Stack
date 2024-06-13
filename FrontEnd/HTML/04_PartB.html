@@ -1,0 +1,175 @@
+<!-- 
+    ## Atribute Types
+
+        - Mostly, attributes will exist in pairs like → attribute = “ value “
+            - here, value can be in double quotes ( “ “ ) or single quotes ( ‘ ‘ ).
+        - Some attributes will exist as single & won’t have value → boolean attributes
+-->
+
+
+<!-- 
+    LIST in HTML:
+    ------------
+
+        HTML Lists are used to specify list of items.
+
+        There are 3 types of Lists in HTML, they are:
+
+        - Ordered List
+        - Unordered List
+        - Description List
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists</title>
+</head>
+<body>
+    <!-- 
+    Ordered List `<ol>`:
+    -------------------
+
+        - The `<ol>` tag represents an ordered list of items.
+        - But to actually display the list of items, we need to use `<li>` tag → list item
+        - Content enclosed within `<li>` tag only are displayed as list.
+
+
+    There are several attributes that can be used within this `<ol>` tags
+
+        - type → describes the list numbering type. [1, a, A, i, I. There is no "none"]
+        - reversed → describes the list numbering in reverse manner
+        - start → used to predefine the start No. of list numbering. 
+        
+    
+    NOTE:
+        - start attribute should always be in 1,2... [ NOT roman or alphabetical ]
+        - if we give both start & reversed attributes together, then the numbering will start from given start value & then decrease.
+        - This is the same case with type = "A" (or) "I", after "0" they will display in -ve numbers
+    -->
+    <ol reversed type="A" start="2">
+        <li>Java</li>
+        <li>python</li>
+        <li>Javascript</li>
+        <li>CPP</li>
+    </ol>
+
+
+    <!-- 
+        ## UnOrdered List `<ul>` :
+
+            - The `<ul>` element represents an unordered list of items.
+            - It has only 1 attribute -> "type"
+            - type -> describes the list numbering type. [square, circle, disc & none]
+    -->
+    <ul type="square">
+        <li>Eat</li>
+        <li>Sleep</li>
+        <li>Code</li>
+        <li>Repeat</li>
+    </ul>
+
+    <!-- 
+        NOTE:
+        ----
+            - <li> tags can be directly used to display the list of items
+            - But by default, <li> displays content in un-ordered list
+            - These behave as an individual elements, hence we cannot change the type of list items all together even with <div> tag
+            - As these are NOT contained within <ul>, these will have the same indentation as rest of the elements 
+            - If these <li> tags are enclosed within <ul>, then these will have a tab of indentation as well
+    -->
+
+
+    <!-- 
+        Description List:
+        ----------------
+
+        - The `<dl>` element represents a description list.
+            - Instead of `<li>`, it has 2 elements called `<dt>` & `<dd>`
+            - The `<dt>` → "description term" element specifies a term in the list.
+            - The `<dd>` → "description detail" element provides the description/definition/value for the preceding term (`<dt>`)
+            - There is NO specific rule that `<dd>` should always come after `<dt>` , These can come in any of the combination
+                - `<dt>` always have same indentation as the before element [just like Normal elements but NOT like <ol> & <ul>]
+                - `<dd>` always will have a tab of indentation from `<dt>`
+    -->
+    <dl>
+        <dt>HTML</dt>
+        <dd>It describes the structure of webpage</dd>
+
+        <dt>JavaScript</dt>
+        <dt>TypeScript</dt>
+        <dd>Both describes the functionality of a webpage & makes them dynamic</dd>
+        <dd>But Typescript is more of a strict language than Javascript</dd>
+
+        <dt>CSS</dt>
+    </dl>
+
+
+    <!-- 
+        Anchor Element `<a>`:
+        --------------------
+
+            - "<a>" tag is used to add links in our webpage
+            - "<a>" tag converts a normal text into “hypertext”
+            - 'href' → hypertext reference is must attribute for "<a>" tag
+                - This will have the destination/linked page URL
+                - We can give 'href' values using 2 ways
+                    - `Absolute` Add → giving full add of website
+                    - `Relative` Add → giving add relative to absolute
+            - “target” → it describes where to open the destination/linked page. [_blank, _self, _parent & _top]
+            - “download” → used to download the file
+            - To create links that open in the user's email application so as to let them send a new mail
+                - < a href = “ mailto: kumar.jallipalli@gmail.com “ > Mail to Kumar </a>
+            - To link Telephone numbers,
+                - < a href = “ tel: +9988774455 “ > Call to Kumar </a>
+
+        - Strong Text link → The content inside a link should indicate where the link goes [ even out of context ].
+        - Weak Text link → It doesn’t indicate where the link goes & just says “click here” or “here”.
+    -->
+    
+
+    <!-- 
+        Image ELement `<img/>`:
+        ----------------------
+
+        - <img/> element is used to embed images in web pages
+
+        - The ”src” attribute is required, and contains the URL which points out to the image to be embeded.
+            - We can give the value for “src”
+                    - Locally → by downloading the img & giving it’s path in the “src”
+                    - Online → the whole image’s absolute address from internet as the URL
+
+        - The ”alt” attribute holds the textual replacement for the image, which **incredibly useful** for accessibility
+            - screen readers read the attribute value out loud to their users so they know what the image means.
+            - 'Alt text' is also displayed on the page if the image can't be loaded for some reason
+                    - for example, network errors, content blocking, or linkrot.
+            - Setting this attribute to an empty string (`alt=""`) 
+                    -indicates that this image is *not* a key part of the content
+                    - And broken img symbol is not displayed as well
+
+        - “loading” → Indicates how the browser should load the image
+            - eager → Loads the image immediately, even if the image is currently NOT within the visible viewport (default value).
+            - lazy → Defers loading the image until it reaches a calculated distance from the viewport, as defined by the browser.
+                - The intent is to avoid the network and storage bandwidth needed to handle the image until it's reasonably certain that it will be needed.
+                - This generally improves the performance of the content in most typical use cases.
+    -->
+    <img 
+        src="https://5.imimg.com/data5/SELLER/Default/2023/9/344928632/OW/RQ/XC/25352890/yellow-mango-1000x1000.jpeg" 
+        alt="Mango Picture"
+    />
+
+
+    <!-- 
+        Comments:
+        --------
+
+            - Comments in HTML are ignored by browser & it won’t be displayed to End-User.
+            - These comments are generally used by developers 
+                    - for better documentation purpose -> so that the other developer can understand the code.
+                    - for debugging the code -> we can comment out the sections of code to understand it’s execution behavior
+            - In HTML, we only have multi line comments
+    -->
+</body>
+</html>
