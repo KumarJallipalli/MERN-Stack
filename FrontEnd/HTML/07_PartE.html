@@ -1,0 +1,288 @@
+<!-- 
+    <FORM> tag:
+    --------
+    `<form>` tag is used to Collect the data from User.
+        - `action` attribute is used to describe where to send the collected data (or)
+            - It describes which actions to be performed on the submitted data
+        - ex: <form action=”/action.php”> → this sends the collected data to action.php file
+--> 
+
+<!-- 
+    <input> tag:
+    -----------
+    `<input/>` tag → used to collect diff/multiple types of data from user
+
+    - It uses `type` atribute to take diff diff types of data from user.
+    - ex: `<input type = 'text' />`
+
+        `type = 'text'` → creates an input box which can take text data from user 
+
+        `type = 'password'` → creates an input box which hides the input data from user for sensitivity
+
+        `type = 'number'` → creates an input box which takes only numbers as data from user
+
+        `type = 'time'` → creates an input box which takes time from user [like 10: 20 PM]
+
+        `type = 'color'` → creates an input box which takes color from user [RGB value]
+-->
+
+<!-- 
+    <button>:
+    --------
+    `<button>` element is used to submit the form’s data
+        - It will submit the data to the value mentioned in the `action` attribute.
+        - It’s behavior changes depeneding on where the button is positioned
+    
+    NOTE:
+    ----
+    - No matter what, if a button element is inside a form element, it will submit the collected data . [default behavior]
+    - If the button is outside the form element, then it will behave just like a button [type=”button”] even if we explicitly change the type too
+-->
+
+<!-- 
+    "name" attribute:
+    ----------------
+    Whatever the data we have collected & submitted, it will be used in the backend/DB.
+    → So to access these collected data in the backend/DB, we need to have some reference to each of the collected data
+    → i.e., where “name” attribute will be used. 
+    → name is used to refer/access the data entered in the <input/> element from backend
+
+    All of the form’s data is submitted in the form of “name=value” pair
+        → value will be that input data entered by user
+        → name will be the value of the name attribute corresponding to that <input/> element 
+
+    These “name=value” pair is sent/submitted to the action’s attribute value [file/url]
+    ex: if action=”/server” & name=”user”, input value by the user is “Jerry”
+    → then upon submitting, the url will appear like “server?user=jerry”
+-->
+
+
+<!-- 
+    Radio Buttons:
+    -------------
+    - It is an `<input/>` element where attribute type=”radio”
+    - It is very simillar to “checkbox” but able to select only 1 option out of many.
+        - This will happen/work, only when the options are grouped
+        - Grouping means, all the `<input/>` element must have same `“name”` attribute value
+            - "Grouping" → user will be able to select only 1 option out of many
+            - Even if he tries to select multiple opt, other's will be de-selected
+    - Used in true/false, gender selection, subjects selection so on…
+-->
+
+<!-- 
+    checkbox:
+    --------
+    - It is an `<input/>` element where attribute type=”checkbox”
+    - `checked` → attribute makes the checkbox ON by default
+    - Mainly used in Terms & condition
+    - Adv → We can select multiple checkboxes & all of them will be ON
+    - "Grouping" won't work in case of checkboxes
+
+    NOTE:
+    ----
+💡 If the checkbox is
+        - checked → ON & it will be sent in URL with “name=on” format
+        - unchecked → OFF && nothing will be sent in URL when submitted
+
+    This is due to that user don’t enter any data, he just selects the box. 
+    i.e. why, depending on the user selection only, either ON or nothing is sent in the `action`
+-->
+
+<!-- 
+    IMP points regarding "checkboxes" & "Radio buttons"
+    --------------------------------------------------
+    In checkboxes & Radiobuttons, there is 1 very imp attribute called "value" 
+        → As these are selection based data inputs, only ON or nothing is passed into action 
+        → we will have multiple options to select but only 1 got selected & sent as ON. 
+        → Hence it is difficult in backend side to understand which one got selected by user
+        → This is where the "value" attribute comes into picture
+        → So, Instead of sending ON value, It sends the “value” of the value attribute into action 
+        → In this way, we can know which value got selected from backend side itself
+
+        Hence when it comes to both checkboxes & radio buttons, 2 are imp things
+        1. name attribute → for grouping
+        2. value attribute → to override the value in the “name="###” pair
+-->
+
+<!-- 
+    Dropdown:
+    --------
+    - `<select>` element is used to create “dropdown’s” in HTML, instead of `<~~input~~>`
+    - Silimar to <table> & <form> elements, `<select>` elements creates a dropdow with no data/value
+    - So, we use another element `<option>` to give the dropdown values
+    - `selected` → attribute makes any option selected by default [pre-selection]
+    - Used in, selecting a state or country
+
+    NOTE:
+    ----
+    In dropdowns,
+    → “value” attribute is not a mandatory one, as the dropdown option itself will be taken as the value
+
+    → Remember, dropdown’s are NOT under <input> elements, It is under <select> element
+    → If you want to give “placeholder” in your dropdown box, 
+        - we will give using the <option> element only, with the content inside it acting as a placeholder
+-->
+
+<!-- 
+    Range:
+    -----
+    It is an `<input/>` element where attribute type=”range”
+    - used to give larger selection values, instead of checkboxes & radio buttons
+        - `min` → attribute used to give the LOWER limit
+        - `max` → attribute used to give the UPPER limit
+        - `value` → attribute used to give the preset value [This is NOT a mandatory field]
+            - If it clashes with step value, then it will take the nearest upper step value Only if “min” is not defined
+        - `step` → attribute used to give the step incremental/decremental
+    - Used in, volume controls (or) brightness controls
+-->
+
+<!-- 
+    text-area:
+    ---------
+    - Instead of `<~~input~~/>` element, we have `<textarea>` element to take large amount of text data
+    - This is a container tag, so whatever the content you write within it, it will appear in the textarea box.
+        - If you give any placeholder with some content in the textarea, it will display content by overiding the placeholder’s value
+    - `rows` & `cols` are used to define the area of the textarea
+    - default will be → cols="10" rows="2”
+    - Ex: Feedback forms
+
+    NOTE:
+    ----
+    → In the text input element’s if you give the value of placeholder very large also, it will only display upto it’s defined width
+    → If you give any placeholder value with some content in the input element, it will display content by overiding the placeholder’s value
+    → If you use more than 1 "for" attribute in a label & give diff id’s in it, still it will only have connection with the 1st id.
+-->
+
+<!-- 
+    <fieldset>:
+    ----------
+    - The `<fieldset>` tag is used to group related elements in a form & draws a box around them
+    - `<legend>` → describes the caption/title to the grouped filedset elements
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms in HTML</title>
+</head>
+<body>
+    <Form>
+    
+    <!-- 
+        <label> tag:
+        -----------
+        - `<label>` element represents a caption/label to a specific item in the UI
+        - It is used to create a link/connection between a caption & an Input box 
+
+        - There are 2 ways of creating link between caption & Input box
+    -->
+            <!-- 1st way -->
+            Username:
+            <input type="text" placeholder="Username">
+            
+            <!-- 2nd way -->
+            <label>
+                Username:
+                <input type="text" placeholder="Username">
+            </label>
+    <!-- 
+        The difference between the above 2 ways are:
+        - In the 1st way, there is NO connection made between the text “Username” & “Input” box, 
+            - Hence Those two are independent from each other.
+        - In the 2nd way, Username became a caption to the Input box & highlights the input box
+            - This connection is made by `<label>` tag
+    -->
+
+            <!-- Classical Approach -->
+            <label for="username"> Username: </label>
+            <input type="text" id="username">
+    <!-- 
+        - here too both the “Username” from <label> element & <input/> elements are connected
+            - But now, the connection is made through the `“for”` & `“id”` attributes of `<label>` & `<input/>` elements respectively
+        - The values of these attributes must be same in order happen a connection between them.
+    -->
+
+
+    <!-- There are 3 types of behavior performed by this <button> element [ excluding on where the button is located ] -->
+        <button>Submit</button>                     <!-- same as the type="submit" -->
+        <button type="submit"> Submit </button>     <!-- submits the data -->
+        <button type="reset"> Reset </button>       <!-- Resets the data -->
+        <button type="button"> normal </button>     <!-- Nothing but just clickable button -->
+
+    <!-- We can also define the same buttons using <input/> elements -->
+        <input type="submit">
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+        <input type="button" value="button">
+        <!-- 
+            - value atribute defines the name of the button, if none given ⇒ no name for button
+            - But we will never use this writing style as it is not a good practice 
+        -->
+    
+    </Form>
+
+
+    <!-- Practice Q: Create a search option that redirects it’s search request to Google -->
+    <h2>Google Search</h2>
+    <form action="https://www.google.com/search?">
+        <input type="text" name="q" placeholder="Search here..">
+        <button>Google Search</button>
+    </form>
+
+    <hr>
+
+    <h2>All Examples of each Form related elements</h2>
+    <form action="index.js">
+        <div>
+            Subjects:
+            <input type="checkbox" name="sub" value="Math" id="Math">
+            <label for="Math">Maths</label>
+            <input type="checkbox" name="sub" value="Phy" id="Phy">
+            <label for="Phy">Physics</label>
+            <input type="checkbox" name="sub" value="Chem" id="Chem">
+            <label for="Chem">Chemistry</label>
+        </div>
+
+        <div>
+            <label for="fruits">Favarite Fruit: </label>
+            <input type="radio" name="fruits" id="Mango" value="Mango">
+            <label for="Mango">Mango</label>
+            <input type="radio" name="fruits" id="Banana" value="Banana">
+            <label for="Banana">Banana</label>
+            <input type="radio" name="fruits" id="Apple" value="Apple">
+            <label for="Apple">Apple</label>
+        </div>
+
+        <select name="State" id="state">
+            <option >select state</option>
+            <option selected>Andhra Pradesh</option>
+            <option value="tn">Telangana</option>
+            <option value="kn">Karnataka</option>
+        </select>
+
+        <button>Submit</button>
+    </form>
+</body>
+</html>
+
+
+<!-- 
+    SUMMARY:
+    -------
+    - <form> element -> to collect data from users
+    - action attribute -> describes where to send the collected data
+
+    - <input> -> element that actually collects different types of data inside form 
+    - <label> -> to link the input box & caption
+    - type="radio" -> "name" attribute is V.Imp as it groups radio buttons together
+    - "value" attribute is V.Imp for both "radio" & "checkboxes" as it is sent in the URL when submitted
+
+    - <select> -> to collect dropdown data
+    - <option> -> to actually define the dropdown data
+    - Here, "value" attribute's value is sent if defined, else dropdown content is taken as value
+
+    - <textarea> -> used to collect large data
+    - content within this tag replaces placeholder's value
+-->
