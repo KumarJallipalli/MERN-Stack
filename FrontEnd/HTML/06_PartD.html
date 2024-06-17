@@ -1,0 +1,133 @@
+<!-- 
+    <source> tag:
+    ------------
+    - `<source>` → Media or Image Source element
+    - The `<source>` ****element specifies one or more media resources for the `<picture>`, `<audio>`, and `<video>` elements.
+    - It is a Void Element (or) Empty Element
+    - `<source>` element is commonly used to offer the same media content in different file formats in order to provide browser compatibility
+-->
+
+<!-- 
+    <audio> tag:
+    -----------
+    - `<audio>` tag → used to embed sound content in a document [ such as music or other audio streams ]
+    - It may contain one or more audio sources, represented using the `src` attribute or the `<source>` element.
+        - the browser will choose the most suitable one.
+    - Attributes:
+            - `autoplay` → Specifies that the audio will start playing as soon as it is ready
+            - `controls` → Specifies that audio controls should be displayed (such as a play/pause button etc)
+            - `loop` → Specifies that the audio will start over again, every time it is finished
+            - `muted` → Specifies that the audio output should be muted
+            - `src` → Specifies the URL of the audio file [ you may instead use the `<source>` element]
+-->
+    
+<!-- 
+    <video> tag:
+    -----------
+    - `<video>` element → embeds a media player which supports video playback into the document.
+    - The `<source>` element allows you to specify alternative video files which the browser may choose from.
+        - The browser will use the first recognized format.
+    - It is a good idea to always include `width` and `height` attributes.
+        - If height and width are not set, the page might flicker while the video loads.
+-->
+
+
+<!-- 
+    TABLES:
+    ------
+    - Tables in HTML are used to represent real life tables.
+    - Tables → representing data in rows [horizantal] & columns [vertical]
+    - `<table>` tag → used to create the table.
+        - Unlike `<ol>` this `<table>` tag actually creates the table
+
+    - `<caption>` → used to give the title/caption for the table
+
+    - data in tables is represented using 3 tags
+        - `<tr>` → used to create table row
+        - `<td>` → used to create single cell table data
+        - `<th>` → used to create single cell table header data
+            - By default, the text in `<th>` elements are bold and centered,
+
+    - If we create the table only using HTML, it won’t have any borders by deafault and doesn’t look like a table.
+    - "border" attribute is used to display the border. <table border=”black”> 
+            - But this way of giving is not appropriate & we will give table border using CSS
+
+    Semantics in <table>
+        - <thead> → used to wrap the table header
+        - <tdata> → used to wrap the table data
+        - <tfooter> → used to wrap the table footer
+-->
+
+<!-- 
+    Spanning in <table>:
+    -------------------
+    Generally, each cell in table will occupy 1 row & 1column. But there will be scenarios where one cell will occupy multiple rows & columns.
+        - Span → the amount of space that something covers.
+        - `rowspan` → used to create cells which spans over multiple rows
+        - `colspan` → used to create cells which spans over multiple columns
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - Part D</title>
+</head>
+<body>
+
+    <h2>Audio Element</h2>
+    <audio controls autoplay src="./Files/Seheri.mp3" type="audio/mp3" ></audio>
+    <audio controls autoplay muted >
+        <source src="./Files/Seheri.mp3" type="audio/mp3">
+    </audio>
+    
+
+    <h2>Video Element</h2>
+    <video src="./Files/Nature.mp4" src="./Files/Seheri.mp3" controls autoplay width="300" height="200"></video>
+    <!-- Download & autoplay functionalities are NOTR working for the above -->
+
+
+    <h2>TABLES</h2>
+    <table border="black">
+        <caption>A test table with merged cells</caption>
+        <tr>
+            <th rowspan="2"></th>
+            <th colspan="2">Average</th>
+            <th rowspan="2">Red eyes</th>
+        </tr>
+        <tr>
+            <th>Height</th>
+            <th>Weight</th>
+        </tr>
+        <tr>
+            <th>Males</th>
+            <td>1.9</td>
+            <td>0.003</td>
+            <td>40%</td>
+        </tr>
+        <tr>
+            <th>Females</th>
+            <td>1.7</td>
+            <td>0.002</td>
+            <td>43%</td>
+        </tr>
+    </table>
+
+
+    <!-- Interview Q: Can we put anchor tag inside anchor tag? -->
+        <a href="https://www.google.com/">
+            <div>
+                <a href="https://www.microsoft.com/en-in/">click here</a> to go to microsoft page
+            </div>
+        </a>
+            
+        <!-- OUTPUT [in browser] -->
+        <a href="https://www.google.com/"></a>
+        <div>
+            <a href="https://www.google.com/"></a>
+            <a href="https://www.microsoft.com/en-in/">click here</a> to go to microsoft page
+        </div>
+</body>
+</html>
