@@ -1,0 +1,165 @@
+<!-- 
+    Block (vs) InLine Elements:
+    --------------------------
+    Block Elements
+            - Takes up the full-width available [whole block], even if the content within it don’t require.
+            - Starts from new line
+            - It actually divides the entire page into blocks of content.
+            - ex: h-tags, p-tags, div-tag etc..
+
+    InLine Elements
+            - Takes up only necessarly width [ necessary by the content within the tag ]
+            - Don’t start from new line but from the end of the previous element
+            - These are actually used to differentiate the specific part of the text
+            - ex: anchor-tag, img-tag, span-tag etc..
+
+    
+    We can verify an element whether it is Block (or) inLine using
+        - inspect
+        - by actually writing 2 similar elements next by next
+
+    NOTE:
+    ---- 
+    <body> tag is a Block level element
+-->
+
+
+<!-- 
+    <div> (vs) <span>:
+    -----------------
+    DIV element <div>
+        - `<div>` → Content Division Element
+        - Div is a container used to hold other html elments (or) group elements together [ so that those elements can be easily styled ]
+        - Div is a block-level Element
+        - It has no effect on the content or layout, until styled in some way using CSS
+
+    SPAN Element <span>
+        - Span is same sa Div element except it is an InLine Container.
+            - i.e., elements grouped together using `<span>` shows In-line behavior
+        - Span is an InLine element.
+
+    NOTE:
+    ----
+    These <div> or <span> elements should be used only when no other semantic element is appropriate.
+-->
+
+
+<!-- 
+    <sub> & <sup> tags:
+    ------------------
+        - `<sub>` → used to describe the content as SubScript
+        - `<sup>` → used to describe the content as SuperScript
+-->
+
+
+<!-- 
+    Semantic Tags:
+    -------------
+    - In programming, **Semantics** refers to the *meaning* of a piece of code
+    - Semantic tags → Tags that describes it’s meaning of the content [ to both browser & developer ]
+    - i.e., upon looking into these tags names itself we can understand what are these tags used for.
+
+    - Why Semantic Tags..?
+        - These tags makes the code more meaningful & forms a structured layout
+        - These are used to make the website SEO friendly
+        - It is very useful for screen readers for accessibility
+
+    Some Imp semantic tags:
+    ----------------------
+    - <header> tag  → represents a container for introductory content or a set of navigational links
+    - <nav> tag     → defines a set of navigation links.
+    - <main> tag    → specifies the main/dominant content of a document.
+    - <footer> tag  → defines a footer for a document or section 
+    - <section> tag → same as div tag but semantic
+    - <aside> tag   → used to contain the related information to the document’s main content → usually sidebars (or) call-out boxes
+    - <article> tag → specifies independent, self-contained content which make sense on its own
+-->
+
+<!-- 
+    <figure> & <figcaption>:
+    -----------------------
+    - The `<figure>` tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
+    - The `<figcaption>` tag defines a caption for a `<figure>` element
+    - The figure, its caption, and its contents are referenced as a single unit.
+-->
+
+
+<!-- 
+    HTML Entities:
+    -------------
+    - HTML Entity is a piece of text [”string”] that starts with `&` and ends with `semicolon ;`
+    - These are used to display reserved characters, invisible characters [spaces] & 
+    special characters which are difficult to type with a standard keyboard [ like hearts symbol ].
+    - ex: &amp; &lt; &gt; &quot; &nbsp; &hearts;
+
+    In between & and ; it either goes name (or) #decimal_number
+    → sometimes we will find Unicode numbers, which is then needs to be converted into decimal number& then add # infront of it.
+    - ex: &#9733;
+-->
+
+
+<!-- 
+    NOTE:
+    ----
+    wkt, HTML is NOT Case-Sensitive
+        - Hence `<tags>` are also NOT Case-Sensitive
+        - But `&Entities;` are "Case-Sensitive"
+-->
+
+
+<!-- 
+    Emmets:
+    ------
+    - Emmet is a plugin for many popular text editors
+    - This plugin provides us emmet abbriviations which are shorthand for code snippets to code faster
+
+    Some of the shortforms are:
+    - Child ( > ) :  nav>ul>li ⇒ `nav` contains `ul` , now ul becomes child of nav
+    - sibling ( + ) :  nav+ul ⇒ `nav` comes along with `ul` , these 2 are at same level
+    - multipication ( * ) :  ul>li*5 ⇒ inside `ul` we will get 5 `li` elements
+-->
+
+
+<!-- 
+    HTML5:
+    -----
+    - HTML Standard → is a Document that tells browser how HTML should work
+            - i.e Browser renders the HTML doc according to HTML standard
+    - HTML5 not only contains HTML Standard but also some JS API’s for storage, multimedia Harware Access etc..
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - Part C</title>
+</head>
+<body>
+    <!-- 
+        <figure> & <figcaption>:
+        -----------------------
+        - The `<figure>` tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
+        - The `<figcaption>` tag defines a caption for a `<figure>` element
+        - The figure, its caption, and its contents are referenced as a single unit.
+    -->
+    <figure>
+        <img 
+            src="https://media.istockphoto.com/id/1278893080/photo/silhouette-elephant-standing-nearly-big-trees-in-safari-with-beautiful-sunset-twilight-sky.jpg?s=612x612&w=0&k=20&c=lL-LmU3DPJZMcfRji9yeyczihawNqcLqhXbfY6RmhEg=" 
+            alt="Elephant at sunset" 
+        />
+        <figcaption>An Elephant at sunset</figcaption>
+    </figure>
+
+    <hr>
+    
+
+    <!-- Pratcice Q1 -->
+    <h1>Practice Q</h1>
+    <h2>Pythagorus Theorem says - a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></h2>
+    <h2>Formula for Glucose - C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></h2>
+
+    <!-- Practice Q2 -->
+    <h3>The sky is cloudy &#127783; & it will rain &#9748; today</h3>
+</body>
+</html>
