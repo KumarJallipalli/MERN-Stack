@@ -1,0 +1,70 @@
+/*
+Selector:
+--------
+    → Used to select an individual element (or) group of elements that we want to sytle
+    → There are many ways to select an individual (or) group of elements to style
+*/
+
+/* 
+Universal Selector ( * ):
+    - To select everything in the document
+    - Used to style everything in a single go
+*/
+* {
+	font-family: "Courier New";
+}
+
+
+/* 
+Element Selector:
+    - Used to style all the elements of same type in a single go
+    - To select multiple different elements, we use ( , )
+*/
+h1, p {
+    color: #b92b27;
+}
+
+
+/* 
+id selector ( # ):
+    - Selects an element based on the element’s id attribute value
+    - Used to style a specific individual element
+*/
+#signup {
+    background-color: #b92b27;
+    color: white;
+}
+
+
+/* 
+Class selector ( . ):
+    - Selects the individual/group of elements based on the class’s attribute value
+    - Mainly used to style a group of elements together
+*/
+.upvote {
+    background-color: olivedrab;
+    color: aliceblue;
+}
+
+
+/* 
+Attribute Selector ( [] )
+    - To select elements based on specific attributes of the element.
+    - Used to style only those elements with the specified attributes
+*/
+
+/* We can also define the values in the quotes [ like "password" ] */
+input[type=password] {
+    color: crimson;
+}
+/* Only styles the password box */
+
+input[type=text] {
+    color: green;
+}
+/* Only styles the text box */
+
+input[type] {
+    background-color: ghostwhite;
+}
+/* Styles both the text & password box */

@@ -1,0 +1,31 @@
+/* Practice Q1 */
+#sj {
+    text-align: center;
+    text-decoration: double teal underline;
+    color: orange;
+    font-size: 55px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1.5; /* 1.5 === 1.5*normal === 1.5em [1 em = 16px ] */
+    text-transform: uppercase;
+    font-family: League spartan;
+}
+
+
+/* Practice Q2 */
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h2 {
+    color: #1b74e4;
+}
+
+#search-btn {
+    color: white;
+    background-color: black;
+}
+
+button {
+    background-color: aqua;
+}

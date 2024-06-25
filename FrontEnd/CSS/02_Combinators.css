@@ -1,0 +1,157 @@
+/* 
+Combinators:
+------------
+- Used to combine multiple selectors
+
+- There are four different combinators in CSS:
+    - descendant selector (space)
+    - child selector (>)
+    - adjacent sibling selector (+)
+    - general sibling selector (~)
+*/
+
+
+/* 
+1. Adjacent/Next Sibling ( + )
+    - Used to select the immediate siblings elements ["adjacent" means "immediately following"]
+*/
+p + h3 {
+    color: #1b74e4;
+}
+/* Only selects the immediate next sibling element */
+
+
+/* 
+2. Child Selector ( > )
+    - Selects all the elements which are direct children
+*/
+div > input {
+    background-color: black;
+}
+
+
+/* 
+3. Descendant Selector ( &nbsp )
+    - Used to select the descendent elements of any level.
+*/
+div input {
+    color: red;
+}
+
+/*
+Difference between descendant & child selector:
+    - we can go multiple levels with descendant selector
+    - But only 1 level using child selector
+    This can be understand from above example
+*/
+
+
+/* 
+4. General/Subsequent Sibling Selector (~)
+    - Selects all sibling elements that are next to the specified element.
+    - Doesn't select sibling elements which are previous to specified element
+*/
+div span ~ p {
+    color: lightsalmon;
+}
+
+
+/* 
+Psuedo Classes ( : )
+-------------------
+    - Psuedo Class is a Keyword added to a selector that specifies a Special State of selected elements.
+    - Used to style the element based on the specified state
+
+Syntax:
+    selector:psuedo-class {
+        Property: Value
+    }
+
+1. :hover
+    - These styles will apllicable when the cursor is over the element
+
+2. :active
+    - These styles will be applied when the mouse/cursor click happens
+
+3. :checked
+    - It represents any radio, checkbox, or option element that is checked or toggled to an "on" state.
+    - These styles will be applied when the state of the elements are checked
+
+4. :nth-of-type( ) [V.Imp]
+    - It matches elements based on their position among siblings of the same type (tag name).
+*/
+button:hover {
+    background-color: coral;
+}
+button[id=login]:active {
+    background-color: #1b74e4;
+}
+button:nth-of-type(2) {
+    color: red;
+}
+
+/* 
+Psuedo-Elements ( :: )
+---------------------
+- Psuedo-Element is a Keyword added to a selector that lets you style a Special Part of selected elements.
+- Used to style the specific part of the element
+    - :: first-letter
+    - :: first-line
+    - :: selected
+*/
+p::first-letter {
+    font-weight: bold;
+    text-transform: lowercase;
+    color: blueviolet;
+}
+
+
+/* 
+Cascading
+---------
+Cascade in CSS is an Algorithm, It’s job is to select the CSS declarations/styles in order to determine the correct values for CSS properties
+    - This Cascading comes into picture, when the elements are of same type
+    - If the elements are of different type or multiple elements are present, It will check for “Specificity”
+
+
+Specificity
+-----------
+It is an algorithm that calculates the weight that is applied to given CSS declarations
+    - This weight is calculated based on the selector used
+    - Id  >  class/attribute/psuedo-class  >  element/psedo-element
+
+NOTE:
+-----
+        Weightage will be as follows:
+        → Id > class > element
+        → more selectors > less selectors
+        → If there is same specificty ⇒ then only cascading is checked
+            Otherwise, specificity is only checked
+
+        - This specificity is displayed in VS-code by default
+
+
+Inline Specificty
+    - Inline style will have more weight than the id selector style
+    - It will have 4th place extra as weightage
+
+!important
+    - Desribes the most important thing in the document
+    - It’s weight is even more than the in-line CSS
+*/
+h2 {
+    background-color: blue !important;
+}
+
+
+/* 
+Inheritance
+-----------
+By default, all the elements [except some] inherits some of the style properties from their parent/grand-parent element
+    - Exception elemenst are: input, button elements
+    - Exception properties are width, height, border & many more..
+    - We need to explicitly give the property value as “inherit” to inherit those properties
+*/
+input {
+    background-color: inherit;      /* Explicitly inheriting the properties*/
+}

@@ -88,7 +88,7 @@ h1 {
     7. line-height: [line spacing]
     ---------------
         - line-height → used to control the spacing/height between the lines [line spacing]
-        - line-height: normal  ||  2.5  [ 2.5 == 2.5*normal ]  ||  2.5em  ||  150%
+        - line-height: normal  ||  2.5  [ 2.5 == 2.5*normal ]  ||  2.5em [ 1em = 16px ]  ||  150%
 
     8. letter-spacing
     -----------------
