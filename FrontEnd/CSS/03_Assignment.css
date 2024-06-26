@@ -1,0 +1,22 @@
+#q1 {
+    height: 150px;
+    width: 300px;
+    background-color: grey;
+    border: dotted 5px black;
+    padding: 1em;
+    margin: 20px 1em 40px 2em;
+}
+
+.q2 {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+li {
+    display: inline;
+}
+/* why the bullet points disappeared when display changed to "inline" */

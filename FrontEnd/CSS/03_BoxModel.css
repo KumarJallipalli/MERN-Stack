@@ -1,0 +1,100 @@
+/* 
+Height
+------
+- It sets the height of the content area of an element [But not the whole element’s height]
+    - By default, it takes the height of the available content
+    - If there is NO content ⇒ No height at all
+
+Width
+-----
+- It sets the Width of the content area of an element [But not the whole element’s Width]
+    - By default, it takes the width of the available screen
+*/
+h2 {
+    width: 500px;
+    height: 300px;
+}
+
+
+/* 
+Border
+------
+Used to set the border of an element.
+
+- Border is Not applied to content, but to content+padding together.
+
+Border gives the instant highlight to that element. 
+i.e why if something needs to be highlighted, we will give it a border.
+
+
+- Border-width
+- Border-style [ none || dashed || dotted || inset || groove || solid ]
+    - we can use combination of these styles too → [ dashed solid || dotted solid none ]
+    - These combination values are applied to the corresponding sides
+        - `border-style: groove;` → applied to all sides
+        - `border-style: groove dotted;` → groove == top & bottom || dotted == left & right
+        - `border-style: groove dotted dashed;` → groove == top || dotted == left & right || dashed == bottom
+        - `border-style: groove dotted dashed none;` → groove == top || dotted == right || dashed == bottom || none == left
+        - i.e., starts from top & goes clockwise
+        - The above works the same for `border-color` & `border-width` too
+- Border-color
+
+Border-shorthand -> used to give the above 3 properties in one go
+        - `border: 5px dashed green;`
+        - Here too, Order is NOT Important
+
+
+We can control the individual sides of the border using
+        - border-left
+        - border-right
+        - border-top
+        - border-bottom
+
+All the border shorthand’s can be used in the individual sides
+        - `border-top: 5px dashed green;`
+*/
+h2 {
+    border-style: groove dashed double none;
+    border-width: 5px 3px;
+    border-color: green blue red;
+}
+
+
+/* 
+Border-radius
+-------------
+- Used to rounds the corners of an element's outer border edge
+- We can control each individual corner
+        - border-top-left-radius
+        - border-top-right-radius
+        - border-bottom-right-radius
+        - border-bottom-left-radius
+- We can also give the values in shorthand
+    - shorthand in `border-radius` starts from top-left & goes clockwise
+*/
+p {
+    border-radius: 10px / 20px;
+    border: solid 5px black;
+}
+
+
+/* 
+Padding
+-------
+Used to set the padding area on all four sides of an element at once.
+        - padding-top
+        - padding-right
+        - padding-bottom
+        - padding-left
+        - We can use the shorthand which starts from top & goes clockwise
+
+
+Margin
+------
+    Used to set the spacing on the outside of border.
+    - It will have the properties same as padding
+*/
+button {
+    padding: 20px;
+    margin: auto 1px;
+}
