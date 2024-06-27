@@ -9,15 +9,14 @@ and the layout used for its children, such as flow layout, grid or flex.
 block
 -----
     - Always starts on new line
-    - Takes up as much horizontal space possible
-            - i.e., full width of container (or) browser window
+    - Takes up full width of container (or) browser window
     - Accepts Width & height properties
     - Both Horizontal & vertical margins/padding works  
 
 inline
 ------
     - DO NOT start on new line, but from the end of the previous element
-    - Takes up horizontal space required by the content
+    - Takes up width required by the content
     - DO NOT Accepts Width & height properties
     - Margins only work horizantally but NOT Verically
     - Padding works both vertical & horizontal 
@@ -39,13 +38,14 @@ RELATIVE UNITS:
 
 Percentage ( % )
 ---------------
-    - Used to set the size as relative to the parent’s element
+    - Realtive to size of parent [ in case of typographical properties like font-size ]
+    - Realtive to size of parent’s width [ in case of other properties like wiidth, padding, margin etc.. ]
     - margin: 33.33% ⇒ relative to parent’s size [33.33% of parent’s element size ]
 
 NOTE:
 ----
-    - Here parent’s size means → width of the parent’s element [if no width, then height]
-    - But NOT the child’s repective property of it’s parent
+    in case of other properties like wiidth, padding, margin etc..  
+    it will never take it’s respective parent’s property, even though the property exists in the parent
 */
 #out_div {
     height: 400px;
