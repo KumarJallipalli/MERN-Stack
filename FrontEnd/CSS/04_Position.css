@@ -1,0 +1,76 @@
+/* 
+Background-image
+----------------
+- It is used to set an image as backgroud
+- `background-image: url(path);`
+
+- But all the times, image dimentions won’t match with element’s dimentions
+- Hence another property called "backgroud-size" is used to fit the image
+        - `contain` → it repeats the image to set the background
+        - `cover` → it fills the entire background by croping/strecthing
+        - `auto` → it stretches the image to set the background
+*/
+
+
+
+/* 
+Position
+--------
+The `position` property sets how an element is positioned in a document
+where as `top` , `left` , `bottom` & `right` properties determine the final location of the positioned element
+
+"postion: static;"
+    - The element is positioned according to the Normal Flow of the document.
+    - `top` , `left` , `bottom` ,  `right` & `z-index` properties have no effect at all
+    - This is the default value & No offset is seen when applied
+
+"position: relative;"
+    - The element is positioned according to the normal flow of the document with Offset
+    - The offset is relative to itself based on the values of  `top` , `left` , `bottom` ,  `right` & `z-index` properties
+
+"position: absolute;"
+    - The element is removed from normal document flow & No space is created for the element in the page layout
+        - i.e., the element’s position will be taken up by subsequent created element
+    - It is positioned relative to it’s closest positioned ancestor, if any [ i.e., for any position property other than position: static ]
+        - otherwise it will be positioned relative to the viewport & and moves along with page scrolling.
+
+"position: fixed;"
+    - The element is removed from normal document flow & No space is created for the element in the page layout
+    - It is positioned relative to the viewport [ except when one of it’s ancestors has a `tranform` , `perspective` or `filter` property ]
+    - It will be fixed/pinned to the screen like a sticky notes & won’t go even if we scroll
+
+"position: sticky;"
+    - The element is positioned according to the normal flow of the document
+    - The offset does not affect the position of any other elements.
+    - An element with `position: sticky;` is positioned based on the user's scroll position.
+    - A sticky element toggles between `relative` and `fixed`, depending on the scroll position.
+    - It is positioned `relative` until a given offset position is met in the viewport - then it "sticks" in place (like `position:fixed`).
+*/
+div div {
+    height: 100px;
+    width: 100px;
+    border: 1px black solid;
+    margin: 10px;
+    display: inline-block;
+    background-color: cadetblue;
+}
+#static {
+    position: static;
+    top: 100px;
+    left: 100px;
+}
+#relative {
+    position: relative;
+    top: 100px;
+    left: 100px;
+}
+#absolute {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+#fixed {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+}
