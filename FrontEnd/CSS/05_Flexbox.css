@@ -1,0 +1,145 @@
+/* 
+Responsive design
+-----------------
+- It is an approach to make web pages render well on a variety of devices & screen sizes for better UI & UX
+- The following `meta` tag makes a page responsive.
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+*/
+
+
+/* 
+Flexbox [Flexible box layout]
+-----------------------------
+- It is a 1-D layout method used for arranging items/elements in rows or columns
+- It is V.Imp in making webistes responsive.
+    - WKT, as screen size changes layout will also change. 
+    - So, to keep the layout flexible on variety of screen sizes we need a flexible layout.
+    - i.e., where flexbox comes into picture
+
+Flex Model
+----------
+- It tells about the imaginary axis depending on the flex direction
+- for direction=row, main axis -> x || cross-axis -> y && direction=column, axis will be opposite of following.
+
+
+NOTE:
+----
+    - The element whose display property set to `flex` will become flex container
+    - The direct child elements of a flex container automatically becomes flex items
+*/
+
+
+/* 
+flex-direction:
+--------------
+- It specifies the arrangement of flex items i.e., axis & direction
+        - flex-direction: row; => main axis is x && left -> right
+        - flex-direction: row-reverse; => main axis is x && right -> left
+        - flex-direction: column; => main axis is y && top -> bottom
+        - flex-direction: column-reverse; => main axis is y && bottom -> top
+*/
+
+
+/* 
+Justify Content
+---------------
+- It is used to distribute the space between & around the flex items “along the main axis”
+- `justify-content` flex-start || flex-end || center || space-between || space-around || space-evenly
+    - `flex-start` → similar to `text-align:left` [ but according to main axis only ]
+    - `flex-end` → similar to `text-align:right` [ but according to main axis only ]
+    - `center` → similar to `text-align:center` [ but according to main axis only ]
+    - `space-between` → It will evenly distribute all the available extra space along main axis in-between the flex items
+    - `space-around` → It will distibute extra space along the main axis with start & end space = half of space in-between
+    - `space-evenly` → It will equally distibute all the available extra space along the main axis
+*/
+
+
+/* 
+Flex Wrap
+---------
+- Generally, flex will contain/fit all the items within the container.
+- In doing so, it may shrink the original dimentions of the items [if required]
+- But, if we need to keep the original dimentiosn as it is, then we can use `flex-wrap`
+
+- It retains the original dimentions & places the items in the next line
+- `flex-wrap` → used to wrap the flex items onto multiple lines [ so as to retain their original dimensions ]
+    - `flex-wrap:nowrap` → [default] No effect at all
+    - `flex-wrap:wrap` → wraps the items onto next line [ i.e., along cross-axis ]
+    - `flex-wrap:wrap-reverse` → wraps the items reversly but along cross-axis
+
+NOTE:
+-----
+    - flex-wrap always retains the flex items original dimentions
+    - If the original dimentions are large then it will overflow after the wrapping
+*/
+
+
+/* 
+Align Items
+-----------
+- `align-items` → only distributes the flex items along the cross-axis [ but NOT the extra available space ]
+- It is very similar to `justify-content` only change is it works along cross-axis & on items only
+    - `flex-start` → The flexbox items are aligned at the **start** of the **cross axis**.
+    - `flex-end` → The flexbox items are aligned at the **end** of the **cross axis**.
+    - `center` → The flexbox items are aligned at the **center** of the **cross axis**.
+    - `baseline` → The flexbox items are aligned at the **baseline** of the **cross axis**.
+        - Baseline → all of the content from each flex items will be on same line irrespective of each flex item dimentions
+*/
+
+
+/* 
+Align content
+-------------
+    - `align-content` → It distributes the space around & in-between the flex items along flexbox’s cross-axis
+    - It is very similar to `justify-content` only change is it works along cross-axis
+
+NOTE
+----
+    There is no justify-content: baseline; & align-content: baseline; 
+    They don’t work at all
+
+    And align-content works when flex-wrap is set to other than nowrap 
+    [ Since then only we can see the spaces between the items along cross-axis ]
+*/
+
+
+/* 
+Properties on flex-items
+------------------------
+- The element whose display property set to `flex` will become flex container
+- The direct child elements of a flex container automatically becomes flex items
+
+`Align self`
+    - It aligns individual flex item along cross-axis
+    - It is very similar to `align-items` but `align-self` has greater priority & can align individual items
+
+`flex-basis` 
+→ it sets the initial main size of a flex-item [ main size → size across main axis ]
+    - if flex-direction is row (or) column ⇒ main size is width (or) height accordingly
+    - `flex-basis:100px`
+
+`flex-grow` ]
+→ It specifies how much of the flex container’s remaining space should be assigned to flex item’s main size.
+    - It defines how much a flex item should grow relative to the other flex items to fill up the excess space of the container.
+    - The default value is 0.
+    - `flex-grow:1` → it says whatever the available free space inside the container along the main axis, take all of that space & occupy it
+    - If we give this `flex-grow` property to 2 elements as 2 & 1, then the total available space is distributed to those 2 items in a 2:1 ratio
+
+`flex-shrink` 
+→ It d****efines how much a flex item should shrink relative to the other flex items when there’s not enough space in the container. 
+- The default value is 1.
+
+flex 
+→ The flex property is a shorthand property for the flex-grow, flex-shrink, and flex-basis properties.
+
+`order` 
+    - The `order` property specifies the order of the flex items.
+    - flex items will appear in the order they are described using `order` but not the order in which they are defined
+
+NOTE:
+-----
+    - All the above flex properties work only when -> display:flex;
+*/
+div.flex-container {
+    display: flex;
+}
