@@ -1,0 +1,103 @@
+/* 
+CSS Animations
+--------------
+Used to animate  CSS Elements
+
+It consists of 
+    - `animation-name` → Which refers to the animation template, which needs to be executed
+    - `animation-duaration` → defines the duration for which the animation needs to be executed
+    - `animation-timing-function` → defines the animation behavior[ similar to `transistion` property ]
+    - `animation-delay` → defines the delay before start of the animation
+    - `animation-iteration-count` → defines the No. of times/iterations an animation needs to be executed
+    - `animation-direction` → defines the direction [ normal, reverse, alternate & alternate-reverse ]
+*/
+
+div {
+    animation-name: identifier1;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.5s;
+    animation-iteration-count: 3;
+    animation-direction: alternate-reverse;
+    /* Starts from End state & goes to Initail state & again End state and so on.. */
+}
+
+/* 
+NOTE
+----
+But before applying these above properties, we need to define the animation template/bluePrint 
+- It defines the chnage of State from initial to Final for an element using `@keyframe`
+*/
+@keyframes identifier1 {
+    from {font-size: 10px;}     /* Initial state */
+    to {font-size: 20px;}       /* Final state */
+}
+
+
+/* 
+NOTE
+----
+- Instead of using `from` & `to` keywords to describe the states, we can use values in `%`
+*/
+@keyframes colorChange {
+    0% {background-color: blue;}
+    25% {background-color: green;}
+    50% {background-color: yellow;}
+    100% {background-color: red;}
+}
+
+
+/* 
+Media Queries
+-------------
+    - It helps to create responsive websites
+    - These are like `if` conditions in CSS
+    - It uses a keyword `@media` with condition & execute the CSS block when the condition is fulfilled
+*/
+@media (min-width: 200px) and (max-width: 400px) {
+    h2 {
+        background-color: yellow;
+        color: black;
+    }
+}
+/* The above CSS will be seen when the width of div is between 200px & 400px */
+
+
+@media (orientation: landscape) {
+    h2 {
+        background-color: lightcyan;
+        color: black;
+    }
+}
+/* The above CSS will be seen when the orientation of mobile is landscape */
+
+
+
+/* 
+Z-Index
+-------
+    - It decides the statck level of elements
+    - Elements with larger `z-indeex` value will overlap those with smaller `z-index` value
+
+NOTE
+----
+    z-index works only when position is NOT static [ which is default ]
+*/
+
+/* Z-Index */
+.z-index div {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
+
+#one {
+    background-color: red;
+    position: relative;
+    z-index: 1;
+}
+#two {
+    background-color: yellow;
+    position: relative;
+    bottom: 50px;
+}
