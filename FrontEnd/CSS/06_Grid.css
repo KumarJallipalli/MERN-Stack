@@ -1,0 +1,152 @@
+/* 
+Grid
+----
+- `grid` is a 2-D layout methods used to arrange items/elements in rows & columns
+    - The element whose display property set to `display: grid;` will be the Grid Container
+    - The direct child elements of grid container will be the Grid Elements
+*/
+
+/* 
+Grid Model
+----------
+- It describes the imaginary graph consisting of grid lines & grid cells
+    - Grid Lines → horizantal & vertical lines caleed row & column lines
+    - Grid Cell → refers to Each cell in the grid
+    - Grid Track → refers to space between any 2 adjacent row/column lines → i.e., rows & columns
+*/
+
+/* 
+Grid Template
+-------------
+    - It defines the size & No. of rows & columns
+    - `grid-template-rows: 10px 10px ... n` → defines n rows with 10px each
+    - `grid-template-columns: 10px 10px ... m` → defines m columns with 10px each
+    - Now, the elements will be arranged in cells based on the created rows & columns
+*/
+
+.grid {
+    height: 400px;
+    width: 800px;
+    background-color: yellow;
+    display: grid;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 200px 200px;
+    grid-gap: 10px;
+    text-align: center;
+    color: white;
+}
+/* 
+    - Here, grid will be formed using only the mentioned  rows & column templates
+    - i.e., grid of size 3 X 2 with each cell  being [200, 100]
+    - Each child div will be arranges in these cells row-wise [ default]
+
+    If we observe above grid formed using template rows & colums, Only some part of conatiner is formed as grid
+    - To make whole conatiner as grid, we shouldn’t hardcode the values, instead use `auto`
+    - `auto` will divide the container automatically based on the No. of auto values provided in template row & column
+*/
+
+
+/* 
+We have another way of representing the same above code 
+    → instead of `auto` use `1fr` [ 1fr == 1 fraction of available width/main size ]
+    But the major advantage with `1fr` is we can use `repeat()` method on `1fr`
+
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+
+    - `repeat` takes 2 arguments [ counst & 1fr ]
+    - count → No. of repetetions of 1fr
+    - This code will result the same as above 2 code snippets
+
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+
+NOTE
+----
+    The major differencfe between hardcoded values & repeat/1fr/auto 
+        → whole container is divide into grid
+*/
+
+
+.grid div {
+    background-color: blue;
+    border: 2px solid black;
+}
+
+
+/* 
+Grid Gaps
+---------
+Grid Gaps define gaps between the rows
+    `row-gap: 10px;` → defines the size of the gap between 2 adjacent rows (or) row lines
+    `column-gap: 10px;` → defines the size of the gap between 2 adjacent columns (or) column lines
+    `grid-gap: 10px 20px` → shorthand to define both `row-gap` & `column-gap`
+
+NOTE:
+-----
+    If grid-gap: 10px; → defines the size of both row & column gap as 10px
+    → These grid gaps are generally the gaps between grid items
+*/
+
+
+
+/* 
+Grid Column
+-----------
+Grid Column defines an Item’s starting & Ending position inside the container’s COLUMN
+This is very similar to column spanning in `table`
+    `grid-column-start: line_number;` → defines the Start position 
+    `grid-column-end: line_number;` → defines the End position \
+    `grid-column: start/end;` → shortcut to define both column start & end of an item using column line numbers
+    `grid-column: start/span No_of_columns;` → shortcut to define both column start & end of an item using spanning
+*/
+.grid #item-1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    grid-column: 1/4;
+    grid-column: 2/ span 2;
+}
+
+
+/* 
+Grid Row
+--------
+Grid Row defines an Item’s starting & Ending position inside the container’s ROW
+This is very similar to row spanning in `table`
+    `grid-row-start: line_number;` → defines the Start position 
+    `grid-row-end: line_number;` → defines the End position 
+    `grid-row: start/end;` → shortcut to define both column start & end of an item using column line numbers
+    `grid-row: start/span No_of_rows;` → shortcut to define both column start & end of an item using spanning
+*/
+.grid #item-2 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    grid-row: 1/3;
+    grid-row: 1/ span 4;
+}
+
+/* 
+NOTE
+----
+    If the specified start/end column/row number is greater than the existing column/row number
+    It will create a new column/row line & then arrange the item accordingly
+*/
+
+
+
+/* 
+Common Properties
+-----------------
+`justify-items` → Used on the Container → arranges items inside the cell Horizantally (or) row-wise
+`justify-self`→ Used on the Item→ arranges items inside the cel Horizantally (or) row-wise
+`align-items` → Used on the Container → arranges items inside the cell Vertically (or) column-wise
+`align-self`→ Used on the Item→ arranges items inside the cel Vertically (or) column-wise
+`place-items` → shortcut for `justify-items` & `align-items`
+`place-self`→ shortcut for `justify-self` & `align-self`
+
+NOTE:
+    These display:grid & display:flex makes the conatiner block → immediate next element will be created ina new row
+    Hence, there is inline-grid & inine-flex which makes conatiner inline
+*/
