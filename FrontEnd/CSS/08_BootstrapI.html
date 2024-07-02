@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="./08_Bootstrap.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Container -->
+    <div class="container-md">
+      <h2>Siva Jallipalli</h2>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos,
+        voluptatibus iste? Maiores eum atque sequi repellendus. Sint eaque ex
+        beatae adipisci illum, eveniet, facilis quaerat soluta animi dolorum ab
+        laboriosam in modi veritatis molestiae eius voluptatum molestias
+        reprehenderit tempore eligendi unde dolor velit? Ad non molestiae
+        voluptas eveniet magni, deleniti reiciendis modi neque incidunt eius
+        fugit ipsum, aliquam rem! Repudiandae rem autem vitae asperiores
+        repellendus officiis ducimus est tempore quaerat quos fugiat iusto
+        maiores, quia eaque. Perferendis iusto quod quasi ex veritatis aliquid!
+        Sequi doloremque, accusantium voluptatibus non recusandae quod quam
+        placeat sapiente esse voluptas adipisci labore, odit repellendus
+        quibusdam?
+      </p>
+    </div>
+
+    <!-- Just a normal button -->
+    <button class="btn">click me</button>
+
+    <!-- button variants -->
+    <button type="button" class="btn btn-primary rounded-pill">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+
+    <!-- This displays button like an Anchor tag -->
+    <button type="button" class="btn btn-link">Link</button>
+
+    <!-- Outline buttons varinats -->
+    <button type="button" class="btn btn-outline-danger">Danger</button>
+    <button type="button" class="btn btn-outline-warning">Warning</button>
+
+    <!-- buttons with different sizes -->
+    <button type="button" class="btn btn-outline-light btn-sm">Light</button>
+    <button type="button" class="btn btn-outline-dark btn-lg">Dark</button>
+
+    <!-- Buttons with "disabled state" -> Not clickable -->
+    <button type="button" class="btn btn-outline-info" disabled>Info</button>
+
+    <!-- Buttons in anchor tag -> used to trigger in-page functionality-->
+    <a href="#" class="btn btn-outline-primary">Anchor Button</a>
+    <!-- to disable button inside anchor tag, use diabled isside the class -->
+    <a href="#" class="btn btn-outline-primary disabled"
+      >Disabled Anchor Button</a
+    >
+
+    <!-- Badges -->
+    <h1>Example heading <span class="badge text-bg-secondary">New</span></h1>
+    <h2>Example heading <span class="badge text-bg-secondary">New</span></h2>
+    <h3>Example heading <span class="badge text-bg-secondary">New</span></h3>
+    <h4>Example heading <span class="badge text-bg-secondary">New</span></h4>
+    <h5>Example heading <span class="badge text-bg-secondary">New</span></h5>
+    <h6>Example heading <span class="badge text-bg-secondary">New</span></h6>
+
+    <!-- Badges can be used as part of links or buttons to provide a counter -->
+    <button class="btn btn-dark" disabled>
+      Followers
+      <span class="badge bg-primary rounded-pill">100+</span>
+    </button>
+
+    <!-- Positioned badges - Use utilities to modify & position it in the corner -->
+    <button type="button" class="btn btn-primary position-relative">
+      Inbox
+      <span
+        class="position-absolute top-0 start-100 translate-middle 
+        badge rounded-pill bg-danger">
+        99+
+      </span>
+    </button>
+
+    <!-- Positioned badge without counter for a more generic indicator -->
+    <button type="button" class="btn btn-primary position-relative">
+      Profile
+      <span
+        class="position-absolute top-0 start-100 translate-middle 
+        p-2 bg-danger border border-light rounded-circle">
+      </span>
+    </button>
+
+
+    <!-- Alerts -->
+    <div class="alert alert-warning">Warning..!</div>
+    <div class="alert alert-success">Congratulations..!</div>
+
+    <!-- alert-link - provide matching colored links within any alert. -->
+    <div class="alert alert-danger" role="alert">
+        A simple danger alert with 
+        <a href="#" class="alert-link">an example link</a>.
+        Give it a click if you like.
+    </div>
+
+    <!-- dismissable alerts -->
+    <div class="alert alert-warning alert-dismissible">
+        <strong>Holy guacamole!</strong> You should check the close icon.
+        <button class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+  </body>
+</html>
