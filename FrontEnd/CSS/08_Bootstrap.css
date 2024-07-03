@@ -1,0 +1,87 @@
+/* 
+Bootstrap
+---------
+- Bootstrap is the most popular **CSS Framework** for developing responsive and mobile-first websites.
+- It contains HTML, CSS and (optionally) JS based design templates for typography, forms, buttons, navigation and other interface components.
+
+Benefites
+    - Makes development Faster & Easier
+    - Makes responsive by default & Good choice for pre-built components
+    - good browser compatibility
+*/
+
+
+/* 
+Containers
+----------
+- **Containers are a fundamental building block of Bootstrap that contain, pad, and align your content within a given device or viewport.**
+- Containers are used to contain, pad, and (sometimes) center the content within them
+- Bootstrap comes with three different containers:
+    - `.container`, which sets a `max-width` at each responsive breakpoint
+    - `.container-{breakpoint}`, which is `width: 100%` until the specified breakpoint [ `.container-sm` , `-md` , `-lg` , `-xl` , `-xxl` ]
+    - `.container-fluid`, which is `width: 100%` at all breakpoints
+*/
+
+
+/* 
+Badges
+------
+    - Badges scale to match the size of the immediate parent element by using relative font sizing and `em` units.
+    - As of v5, badges no longer have focus or hover styles for links.
+    - It uses `span` tag with `class="badge"` , But to display, we need to set background-color like `bg-primary`
+*/
+
+
+/* 
+Alerts
+------
+- **Provide contextual feedback messages for typical user actions**
+- `class=alert` → Makes an Alert component
+- `class=alert alert-primary` → Makes an Alert component with corresponding background color [ `alert-primary` is NOT `bg-primary` ]
+- `alert-link` → provide matching colored links within any alert
+- Alerts can also contain additional HTML elements like headings, paragraphs, dividers [hr] & icons.
+- It’s possible to dismiss any alert inline., Using the alert JavaScript plugin
+    - `alert-dismissible` class, which adds extra padding to the right of the alert and positions the close button.
+    - `btn-close` → makes an X button inside the alert
+    - `data-bs-dismiss="alert"` attribute, which triggers the JavaScript functionality.
+*/
+
+
+/* 
+Button Group
+------------
+    - **Group a series of buttons together on a single line or stack them in a vertical column.**
+    - Checkbox & Radio grouping →  `class="btn-check"` groups checkbox
+    - `class="btn-toolbar"` → Combine sets of button groups into button toolbars for more complex components.
+    - `btn-group-lg` & `btn-group-sm` → group sizing
+    - `class="btn-group-vertical"` → appear vertically stacked rather than horizontally
+*/
+
+
+/* 
+Card
+----
+- A basic card is created with the `.card` class, and content inside the card has a `.card-body` class [ padding is for content only ]
+- The `.card-header` class adds a heading to the card and the `.card-footer` class adds a footer to the card
+- Use `.card-title` to add card titles to any heading element.
+- The `.card-text` class is used to remove bottom margins for a <p> element if it is the last child (or the only one) inside `.card-body`.
+- The `.card-link` class adds a blue color to any link, and a hover effect.
+- Add `.card-img-top` or `.card-img-bottom` to an `<img>` to place the image at the top or at the bottom inside the card.
+    - Note that we have added the image outside of the `.card-body` to span the entire width
+- use `.card-img-overlay` to Turn an image into a card background & add text on top of the image:
+*/
+
+
+/* 
+Grid System
+-----------
+- Each row in the grid consists of 12 columns
+- to create the layout you want,
+    - create a container (`<div class="container">`).  [ Must ]
+    - Next, create a row (`<div class="row">`).
+    - Then, add the desired number of columns ( `.col-n` ).
+- Note that numbers in `.col-n` should always add up to 12 for each row.
+- Use the responsive `.row-cols-*` classes to quickly set the number of columns
+- the row columns classes are set on the parent `.row` as a shortcut. [ `<div class="row row-cols-3">` ]
+- We can use all the flex-box propweties like `align-items` , `justify-content` & `justify-self` on the rows & columns
+*/

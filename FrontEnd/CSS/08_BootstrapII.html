@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Part II</title>
+
+    <!-- Bootstrap CDN link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- NO Button Grouping -->
+      <button class="btn btn-outline-primary">one</button>
+      <button class="btn btn-outline-primary">two</button>
+      <button class="btn btn-outline-primary">three</button> &nbsp;&nbsp;
+
+      <!-- Button Grouping -->
+      <div class="btn-group">
+        <button class="btn btn-outline-primary">one</button>
+        <button class="btn btn-outline-secondary">two</button>
+        <button class="btn btn-outline-info">three</button>
+      </div>
+
+      <!-- Checkbox & Radio grouping -> class="btn-check" groups checkbox -->
+      <div class="btn-group">
+        <input type="checkbox" id="b1" class="btn-check" />
+        <label for="b1" class="btn btn-primary">Checkbox1</label>
+        <input type="checkbox" id="b2" class="btn-check" />
+        <label for="b2" class="btn btn-primary">Checkbox1</label>
+        <input type="checkbox" id="b3" class="btn-check" />
+        <label for="b3" class="btn btn-primary">Checkbox1</label>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar bg-body-secondary">
+      <div class="container-fluid">
+        <a href="#" class="navbar-brand">Siva Jallipalli</a>
+      </div>
+    </nav>
+
+    <!-- Navbar with responsive toggle button -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Navbar</a>
+        <!-- Responsive toggle button using JS -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- navbar-collapse -> Makes all nav-items left & collapsable -->
+        <div class="navbar-collapse" id="navbarNav">
+          <!-- nav -> makes li flex instead of bullets
+                  navbar-nav -> adds default style to each elements -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 
+      Navbar forms
+        Immediate child elements of .navbar use flex layout and will default to justify-content: space-between -->
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand">Navbar</a>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- Card -->
+    <div class="container">
+      <div class="card" style="width: 18rem">
+        <img src="./Files/photo.jpg" alt="Camera" class="card-img-top" />
+        <div class="card-body">
+          <h4 class="card-title">Photography</h4>
+          <p class="crad-text">An art to capture the memorable momets</p>
+          <div class="text-center">
+            <a href="#" class="btn btn-outline-primary text-center"
+              >Learn here</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div class="container">
+      <!-- Automatic column allocation -->
+      <div class="row">
+        <div class="col bg-success">One</div>
+        <div class="col bg-dark">Two</div>
+        <!-- Divides the 12 columns into n=2 equal parts -->
+      </div>
+
+      <!-- mnaul column allocation -->
+      <div class="row">
+        <div class="col-3 bg-info">1/4</div>
+        <div class="col-3 bg-secondary">1/4</div>
+        <div class="col-6 bg-warning">2/4</div>
+        <!-- Divides the 12 columns into respective parts -->
+      </div>
+
+      <!-- Combinations -->
+      <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+      <div class="row">
+        <div class="col-md-8 bg-primary">.col-md-8</div>
+        <div class="col-6 col-md-4 bg-secondary">.col-6 .col-md-4</div>
+      </div>
+
+      <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+      <div class="row">
+        <div class="col-6 col-md-4 bg-primary">.col-6 .col-md-4</div>
+        <div class="col-6 col-md-4 bg-secondary">.col-6 .col-md-4</div>
+        <div class="col-6 col-md-4 bg-warning">.col-6 .col-md-4</div>
+      </div>
+    </div>
+  </body>
+</html>
