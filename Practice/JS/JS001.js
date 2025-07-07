@@ -1,43 +1,49 @@
-// Multi Line String using Template Literal 
-let temp = `Hi,
-This is Multiline String,
-        I don't know what is the spacing followed in here `;
+let strTrim = "  Trimming is FUN   ";
+console.log(strTrim.trim());
+console.log(strTrim);
 
-console.log("Hello There...!");
-console.log(temp);
+let strName = "Freedom FIghter";
+console.log(strName.toLowerCase());
+console.log(strName.toUpperCase());
+console.log(strName);
 
+console.log(strName.indexOf("dom"));
+console.log(strName.indexOf('e'));
 
-console.log(null == undefined);
-console.log(typeof null);
-console.log(typeof undefined);
+console.log(strTrim.trim().toUpperCase());
+console.log(strName);
 
+console.log(strName.replace("FIghter", "Warrior"));
+console.log(strName);
 
-console.log([] == false)
-console.log([] == ![])
+console.log(strName.slice(3));
+console.log(strName.slice(3, 8));
+console.log(strName.slice(-2));
+console.log(strName.slice(15));
 
-
-console.log('' == false)
-console.log(' ' == false)
-console.log('' == " ")
-
-
-console.log( 0 == " ")
-console.log( 0 == '0')
-console.log(null + 1)
-
-
-console.log([] + [])
-console.log(typeof ([] + []))
-console.log([] + {})
+let str = "Hello GFG";
+str[0] = "G";
+console.log(str);
 
 
-console.log(typeof String(false))
-console.log(toString(false))
+// Arrays
+let nums = [1, 2, 3, 4, 5];
+console.log(nums[0], nums[1], nums[4], nums[5], nums[-1]);
 
+let info = ["GameBoy", 25, 99.9999, true, null, undefined]
+console.log(info);
+console.log(info, info[info.length-1]);
+console.log(info[0].length);
+console.log(info[0][0]);
 
-/**
- * ## Why this is happening..?
-        - 0 == ‘’ → true
-        - 0 == ’ ‘ → true
-        - 0 == ‘0’ → true
-*/
+// Arrays are Mutable
+let names = [ "Tillu", "Killu", "Billu"];
+names[0] = "Gillu";
+console.log(names);
+
+names[10] = "Willu";
+console.log(names);
+console.log(names[7]);
+
+// Array Methods
+console.log(names.push("Nillu"));
