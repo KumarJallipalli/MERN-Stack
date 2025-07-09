@@ -1,4 +1,4 @@
-# JS III - Strings & Arrays [ 07/07/2025 ]
+# JS III - Strings & Arrays
 
 ---
 
