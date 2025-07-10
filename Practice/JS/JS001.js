@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let post = {
     userName : "KumarJallipalli",
     content: "How to get Web Develper Job",

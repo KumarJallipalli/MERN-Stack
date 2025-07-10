@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Generate Random Numbers between 1 & 100
 let randomNumber2 = Math.floor(Math.random()*100) + 1;
 console.log(randomNumber2);
