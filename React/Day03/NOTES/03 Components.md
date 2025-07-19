@@ -1,4 +1,4 @@
-# 03. Components [ 18/07/2025 ]
+# 03. Components
 
 ---
 
